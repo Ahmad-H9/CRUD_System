@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD Systenm</title>
+    <!-- Normlize File -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- Master Styling File -->
+    <link rel="stylesheet" href="css/master.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Start Head -->
+      <div class="head">
+        <h2>crud</h2>
+        <p>products management system</p>
+      </div>
+      <!-- End Head -->
+
+      <!-- Start Inputs -->
+      <div class="inputs">
+        <input type="text" placeholder="Name" id="name" />
+        <div class="price">
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            placeholder="Price"
+            id="price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            placeholder="Taxes"
+            id="taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            placeholder="Ads"
+            id="ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            placeholder="Discount"
+            id="discount"
+          />
+          <span id="total">Total: </span>
+        </div>
+        <input type="number" id="quantity" placeholder="Quantity" />
+        <input type="text" placeholder="Category" id="category" />
+        <button id="submit">Create</button>
+      </div>
+      <!-- End Inputs -->
+
+      <!-- Start Outputs -->
+      <div class="outputs">
+        <div class="search">
+          <input
+            type="text"
+            onkeyup="searchData(this.value)"
+            placeholder="Search By Name"
+            id="search"
+          />
+          <div class="searchBtn">
+            <button onclick="getSearchMood(this.id)" id="searchName">
+              Search By Name
+            </button>
+            <button onclick="getSearchMood(this.id)" id="searchCategory">
+              Search By Category
+            </button>
+          </div>
+        </div>
+
+        <div id="deleteAll"></div>
+
+        <div class="reponsive-table">
+          <table>
+            <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>prices</th>
+              <th>taxes</th>
+              <th>ads</th>
+              <th>discount</th>
+              <th>total</th>
+              <th>category</th>
+              <th>update</th>
+              <th>delete</th>
+            </tr>
+
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+      <!-- End Outputs -->
+    </div>
+    <div id="alert">
+      <p>Delete Products?</p>
+      <div class="actions">
+        <button onclick="getAction(this.id)" id="yes">Yes</button>
+        <button onclick="getAction(this.id)" id="no">No</button>
+      </div>
+    </div>
+    <script src="js/master.js"></script>
+  </body>
+</html>
